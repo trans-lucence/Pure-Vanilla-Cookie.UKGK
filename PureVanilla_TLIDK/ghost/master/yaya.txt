@@ -11,6 +11,7 @@ dic, aitalk.dic
 dic, boot.dic
 dic, menu.dic
 dic, meta.dic
+dic, metamenu.dic
 dic, mouse.dic
 dic, other.dic
 dic, word.dic

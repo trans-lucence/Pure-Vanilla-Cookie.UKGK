@@ -1,17 +1,18 @@
+/*
+DEVREMOVE - remove or comment out before release/update
+TODO
+UPDATEDO - to do(/redo) in an update
+NE - needs expression
+*/
+
 OnAiTalk
 {
-	if CHAIN.IDName != ""
-	{
-		LastTalk = ChainTalk
-	}
-	else
-	{
-		LastTalk = RandomTalk
-	}
+	if CHAIN.IDName != ""; { LastTalk = ChainTalk }
+		else; { LastTalk = NormalTalk }
 	LastTalk
 }
 
-RandomTalk : nonoverlap_pool
+NormalTalk : nonoverlap_pool // renamed because i'm planning to add a 'raretalk' pool post-jam // ALL NE
 {
-	""
+	"\0I may not be as quick or spry as I once was, but I still enjoy taking long walks around the Kingdom!.. \n\n[half] ...It helps that the Sugar Gnomes have installed tactile paving along most of the walkways. Those little fellows are so kind and considerate!"
 }

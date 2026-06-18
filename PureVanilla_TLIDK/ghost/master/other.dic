@@ -2,109 +2,109 @@ OnTranslate
 {
 	_talk = reference0
 	
-	//This is what makes %(embedded_elements) work in script input
-	if reference1 == "" && reference2 == "" //If this is from the input box
-	{ //send input box : no event (ref2) , no special flag (ref1)
+	if reference1 == "" && reference2 == ""
+	{ 
 		_talk = EVAL('"' + REPLACE(_talk,'"','""') + '"')
 	}
-	
-	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
 	
 	TOSTR(_talk)
 }
 
-//This is just here so you can use anchors to link to websites if you want. You can link to websites with normal menu choice tags! If you do, a handy URL preview will show up in the balloon!
-OnAnchorSelect
+// function by Zichqec (Zi) https://ukagaka.zichqec.com/function/index#autopause
+OnTranslateInternal.AutoPause
 {
-	if "http://" _in_ reference0 || "https://" _in_ reference0; "\j[""%(reference0)""]"
+	_talk = _argv[0]
+	
+	if "\![no-autopause]" !_in_ _talk
+	{
+				
+		_talk = REPLACE(_talk,"\n ","\n\w9") // linebreak
+		_talk = REPLACE(_talk,". ",".\w8 ") // .
+		_talk = REPLACE(_talk,", ",",\w2 ") // ,
+		_talk = REPLACE(_talk,"? ","?\w_[10] ") // ?
+		_talk = REPLACE(_talk,"! ","!\w_[10] ") // !
+		_talk = REPLACE(_talk,"; ",";\w6 ") // ;
+		_talk = REPLACE(_talk,"-- ","--\w8 ") // --
+	}
+	
+	_talk
 }
 
-//Hotkeys
+OnAnchorSelect; { if "http://" _in_ reference0 || "https://" _in_ reference0; "\j[""%(reference0)""]" }
+
+// Zi; https://ukagaka.zichqec.com/function/index#capitalize
+//"%(Capitalize(WordGroup))" or "%(Capitalize('some text'))"
+Capitalize
+{
+	_first = SUBSTR(_argv[0],0,1)
+	_rest = ERASE(_argv[0],0,1)
+	
+	TOUPPER(_first) + _rest
+}
+
+// Zi; https://ukagaka.zichqec.com/function/index#simple_flags; edited slightly to align more closely with my coding style
+// if flag("X") == 0; Flags ,= "X"
+flag
+{
+	if ASEARCH(_argv[0],Flags) != -1; 1
+	else; 0
+}
+		RemoveFlag
+		{
+			_elements = ASEARCHEX(_argv[0],Flags)
+			if ARRAYSIZE(_elements) > 0
+			{
+				for _i = ARRAYSIZE(_elements) - 1; _i >= 0; _i--
+				{
+					_current = _elements[_i]
+					Flags[_current] = IARRAY
+				}
+			}
+		}
+
 OnKeyPress
 {
 	if reference0 == "f1"; "\![open,readme]"
 	elseif reference0 == "t"; OnAiTalk
 	elseif reference0 == "r"; OnLastTalk
+	elseif reference0 == "0"; OnTest // DEVREMOVE
 }
 
-//Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
 OnSurfaceRestore
-{
-	"\1\s[10]\0\s[0]"
-}
+{	"\1\s[-1]\0\s[0]"	}
 
-//Happens when the ghost is unminimized. You can customize what surfaces are used here/if there's dialogue, but by default I've set it to just go to OnSurfaceRestore
-OnWindowStateRestore
-{
-	OnSurfaceRestore
-}
+OnWindowStateRestore { OnSurfaceRestore }
 
-//Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
-//IF YOU'RE USING GITHUB FOR NETWORK UPDATES: DO NOT USE github.io URLS! It will cause you pain and suffering. USE raw.githubusercontent!!!
-//To get the raw.githubusercontent link super easy:
-//• Open your ghost's repo online
-//• navigate to the ghost's folder (the top level one, with install.txt, readme.txt, etc)
-//• Click on install.txt, or another text file on that level
-//• Once on that page, click the "raw" button. You should see the url now starts with raw.githubusercontent
-//• Copy that url exactly as is, but *leave off the "install.txt" or whatever file name at the end.*
-//Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
-On_homeurl
-{
-	""
-}
+// raw github content link of root file
+On_homeurl; { "https://raw.githubusercontent.com/trans-lucence/Pure-Vanilla-Cookie.UKGK/refs/heads/main/PureVanilla_TLIDK/" } // hopefully this works!!! it won't while the repo is private obviously. but i'll unprivate the repo later in the Jam for testing methinks
 
-
-//—————————————————————————————— Right click menu links ——————————————————————————————
-
-//Takes an array of alternating names and urls, and formats them for use with the right click menu
 FormatLinks : all
 {
 	for _i = 0; _i < ARRAYSIZE(_argv); _i++
 	{
-		_argv[_i] //Add the link/title
-		//Alternate between adding %ASC(1) or %ASC(2)
+		_argv[_i] 
 		if _i % 2 == 1; "%ASC(2)"
 		else; "%ASC(1)"
 	}
 }
 
-On_sakura.recommendsites
-{
-	FormatLinks(recommendsites_sakura)
-}
+	On_sakura.recommendsites; { FormatLinks(recommendsites_sakura) }
 
-//These are the websites linked in the top option of the sakura's right click menu. The format is simple; write the label of the link on the left followed by a semicolon, and then on the right, the url to link to. These should be separate strings.
 recommendsites_sakura : array
 {
-	"Link label";	"https://link.example.com/link/to/whatever/here/"
+	"keelix's site";	"https://trans-lucence.nekoweb.org/"
+	"idk's github";	"https://github.com/singlefl4me/singlefl4me"
 }
 
-On_sakura.portalsites 
-{
-	FormatLinks(portalsites_sakura)
-}
+	On_sakura.portalsites; { FormatLinks(portalsites_sakura) }
 
-//These are the websites linked in the second option of the sakura's right click menu. Same as above
 portalsites_sakura : array
 {
-	"Another link label";	"https://link.example.com/link/to/whatever/here/again/"
-	"A third link label";	"https://link.example.com/link/to/whatever/a/third/time/you/can/add/as/many/as/you/want/"
+	"label";	"link"
+	"label2";	"link2"
 }
 
-On_kero.recommendsites
-{
-	FormatLinks(recommendsites_kero)
-}
-
-//These are the websites linked in the first option of the kero's right click menu. Same as above
-recommendsites_kero : array
-{
-	"These labels can be anything you want";	"https://link.example.com/link/to/whatever/here/once/more/"
-}
-
-
-//—————————————————————————————— User pronoun related ——————————————————————————————
-
+/* // probably won't be used
 they
 {
 	if SHIORI3FW.UserSex == "male"; "he"
@@ -112,60 +112,38 @@ they
 	else; "they"
 }
 
-them
-{
-	if SHIORI3FW.UserSex == "male"; "him"
-	elseif SHIORI3FW.UserSex == "female"; "her"
-	else; "them"
-}
+	them
+	{
+		if SHIORI3FW.UserSex == "male"; "him"
+		elseif SHIORI3FW.UserSex == "female"; "her"
+		else; "them"
+	}
 
-their
-{
-	if SHIORI3FW.UserSex == "male"; "his"
-	elseif SHIORI3FW.UserSex == "female"; "her"
-	else; "their"
-}
+	their
+	{
+		if SHIORI3FW.UserSex == "male"; "his"
+		elseif SHIORI3FW.UserSex == "female"; "her"
+		else; "their"
+	}
 
-theirs
-{
-	if SHIORI3FW.UserSex == "male"; "his"
-	elseif SHIORI3FW.UserSex == "female"; "hers"
-	else; "theirs"
-}
+	theirs
+	{
+		if SHIORI3FW.UserSex == "male"; "his"
+		elseif SHIORI3FW.UserSex == "female"; "hers"
+		else; "theirs"
+	}
 
-themself
-{
-	if SHIORI3FW.UserSex == "male"; "himself"
-	elseif SHIORI3FW.UserSex == "female"; "herself"
-	else; "themself"
-}
+	themself
+	{
+		if SHIORI3FW.UserSex == "male"; "himself"
+		elseif SHIORI3FW.UserSex == "female"; "herself"
+		else; "themself"
+	}
 
 //%(they) %(p('are','is'))
-//You can change the name of this function if you want! I kept it short so it's fast to type
 p
 {
 	if SHIORI3FW.UserSex == "undef"; _argv[0] //they are
 	else; _argv[1] //he is/she is
 }
-
-/*
-
-An example of the above setup:
-"%(they) %(p('were','was')) looking for that earlier, I'll ask if %(they)'%(p('ve','s')) found it."
-
-If using they, the %(p) functions will return the first word specified, resulting in:
-"they were looking for that earlier, I'll ask if they've found it."
-
-If not using they, for example if using she, it will return the second specified word instead, resulting in:
-"she was looking for that earlier, I'll ask if she's found it."
-
-With this function, you can quickly customize words that need to change based on whether it should be singular or plural. Just remember; the %(p) function is set up so that the first word you specify matches with the 'they' labels used on the pronoun functions. You can always switch that around if you like, too.
-
 */
-
-//This just makes %(username) match with the username determined by the SSP prefs, rather than having to use the %username environment variable which is *not* the same and which you can't do things like TOUPPER to.
-//If you want to have the user be able to set a nickname or something, you may want to change username to a variable instead and get rid of this!
-username
-{
-	SHIORI3FW.UserName
-}

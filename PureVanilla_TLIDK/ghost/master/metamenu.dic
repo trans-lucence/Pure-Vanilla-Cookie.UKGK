@@ -1,0 +1,109 @@
+OnMetaMenu : all
+{
+	_cookie = "On"
+		if sayCookie == 0; { _cookie = "Off" }
+	_jam = "On"
+		if sayJam == 0; { _jam = "Off" }
+	_callcookie = "On"
+		if callUserCookie == 0; { _callcookie = "Off" }
+	
+	"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
+	"\f[height,+2]Settings\f[height,default]\n\n[half]"
+	
+	"\![*]\q[Change your name,OnUserRename]\n"
+	"\![*]Append 'Cookie' to the end of your name: %(_callcookie) \f[sup,1](\q[Toggle,OnswitchCallCookie])\n"
+	"\n"
+	
+	
+	"\![*]Say 'Cookie': %(_cookie) \f[sup,1](\q[Toggle,OnswitchCookie])\n"
+	// "\![*]Say 'Strawberry Jam': %(_jam) \f[sup,1](\q[Toggle,OnswitchCookie])\n" // i'll re-add this switch whenever i actually put in dialogue that needs it. for now, it would be kinda ,,, weird ?
+	"\n"
+	
+	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
+	"\![*]\q[Hotkeys,OnHotkeyList]\n\n"
+	
+	"\![*]\q[Back,OnMenu]"
+	
+}
+	
+	OnUserRename : all // NE
+	{
+		"\0\s[0]"
+		--
+		"Please tell me your name, little one!"
+		
+		"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]\n\n[half]"
+		"\f[color,disable]In the text field, you may insert your player Cookie's name. This can be a flavor, type of food, or even just your name -- anything you'd like. By default, the name that you choose will be proceeded by 'Cookie' -- this can be changed in the Settings menu. You can change your name at any time from that same Settings menu.\f[color,default]"
+		--
+		"\n\n \![*]\q[Change name,OnUserRename.yes]"
+		if username.input != ""; { "\n\![*]\q[Not right now,OnUserRename.no]" }
+	}
+		OnUserRename.yes; { "\![open,inputbox,OnUserName.print]" }
+			OnUserRename.no; { "" } // TODO
+		
+		OnUserName.print
+		{
+			username.input = reference0
+			"\0\s[0]My, what a lovely name. Thank you for telling me, %(username)!"
+		}
+	
+	username
+	{
+		if callUserCookie == 1;	{ username.input + " Cookie" }
+		else; { username.input }
+	}
+		
+		OnswitchCallCookie
+		{
+			if callUserCookie == 1; { callUserCookie = 0 }
+			else; { callUserCookie = 1 }
+		}
+
+	OnswitchJam
+	{
+		if sayJam == 1; { sayJam = 0 }
+		else; { sayJam = 1 }
+		OnMetaMenu
+	}	
+	
+	OnswitchCookie
+	{
+		if sayCookie == 1; { sayCookie = 0 }
+		else; { sayCookie = 1 }
+		OnMetaMenu
+	}
+		
+
+	OnHotkeyList : all // other.dic
+	{
+		"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
+		
+		"\![*]F1 -- Opens the README document\n\n"
+		"\![*]T -- Prompts Pure Vanilla to speak\n\n"
+		"\![*]R -- Repeats the last random dialogue\n\f[height,-2]NOTE: Requires Pure Vanilla to have said something this session.\n\n"
+	}
+	
+	OnTalkRateMenu : all
+	{	
+		_talkrate = "Off"
+		if aitalkinterval == 300; _talkrate = "5 minutes"
+		elseif aitalkinterval == 600; _talkrate = "10 minutes"
+		elseif aitalkinterval == 900; _talkrate = "15 minutes"
+		elseif aitalkinterval == 1800; _talkrate = "30 minutes"
+		elseif aitalkinterval == 3600; _talkrate = "1 hour"
+		
+		
+		"\0\s[0]\b2\![set,autoscroll,disable]\![quicksection,true]"
+		"Current talk rate: %(_talkrate)\n\n"
+		
+		"\![*]\q[Off,OnTalkRateChange,0]\n"
+		"\![*]\q[5 minutes,OnTalkRateChange,300]\n"
+		"\![*]\q[10 minutes,OnTalkRateChange,600]\n"
+		"\![*]\q[15 minutes,OnTalkRateChange,900]\n"
+		"\![*]\q[30 minutes,OnTalkRateChange,1800]\n"
+		"\![*]\q[1 hour,OnTalkRateChange,3600]\n"
+		"\n"
+		"\![*]\q[Back,OnMenu]  \![*]\q[Nevermind,blank]"
+	}
+
+		OnTalkRateChange { aitalkinterval = TOINT(reference0) }
