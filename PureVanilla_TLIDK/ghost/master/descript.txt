@@ -1,0 +1,17 @@
+charset,UTF-8
+
+name,Pure Vanilla Cookie
+type,ghost
+
+shiori,yaya.dll
+
+craftman,keelix (trans-lucence) & idkimtired
+craftmanw,keelix (trans-lucence) & idkimtired
+craftmanurl,https://github.com/trans-lucence/Pure-Vanilla-Cookie.UKGK
+
+sakura.name,Pure Vanilla Cookie
+kero.name,
+
+icon,icon.ico
+
+sstp.allowunspecifiedsend,0
