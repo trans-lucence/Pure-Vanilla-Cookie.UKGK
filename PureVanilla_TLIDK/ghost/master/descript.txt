@@ -13,5 +13,6 @@ sakura.name,Pure Vanilla Cookie
 kero.name,
 
 icon,icon.ico
+balloon,Stardust
 
 sstp.allowunspecifiedsend,0

@@ -1,7 +1,7 @@
 /*
 DEVREMOVE - remove or comment out before release/update
 TODO
-UPDATEDO - to do(/redo) in an update
+TOUPDATE - to do(/redo) in an update
 NE - needs expression
 */
 
@@ -12,7 +12,70 @@ OnAiTalk
 	LastTalk
 }
 
-NormalTalk : nonoverlap_pool // renamed because i'm planning to add a 'raretalk' pool post-jam // ALL NE
+NormalTalk : nonoverlap_pool // renamed because i'm planning to add a 'raretalk' pool post-jam
 {
-	"\0I may not be as quick or spry as I once was, but I still enjoy taking long walks around the Kingdom!.. \n\n[half] ...It helps that the Sugar Gnomes have installed tactile paving along most of the walkways. Those little fellows are so kind and considerate!"
+	"\0\s[1]I may not be as quick or spry as I once was, \s[5]but I still enjoy taking long walks around the Kingdom!.. \n\n[half] \s[0]...It helps that the Sugar Gnomes have installed tactile paving along most of the walkways. \s[5]Those little fellows are so kind and considerate!"
+	
+	"\0\s[0]%(username)... \s[1]do you smell those flowers?\n\n[half] \w9\s[5]Yes, I do, too! \w9\s[0]It seems we've wandered into one of the flower gardens near the Castle. \w3I smell\s[1]\w9\w5... \n\f[size,-2]\s[6]hm... \w9is that\w2.\w2.\w8?\f[size,default]\n \w9\s[5]Oh, how lovely! \s[0]There must be Vanilla Orchids here!\n\n[half] \s[1]These have always been my favourite flower. \w9Their smell... \w7\s[5]it brings me right back home."
+	
+	"\0\s[0]Hmm... \w9\s[6]I'm beginning to get a little hungry. \s[1]How about you and I grab some Jellies together? \w3\s[0]There is a lovely restaurant just %(cardinaldirection) of here... \w7\s[5]we could share a %(food.anySolid)!"
+	
+	"\0\s[1]How pleasant..! I think I can hear Clover Cookie playing his lute in the distance...\n\n[half] \s[0]Perhaps we should go say hello! \s[1]Maybe he will play us another pretty song. \s[5]He loves when other %(people) sing along, so please don't be shy if you know the lyrics, %(username)!"
+	
+	"\0\s[2]W-woah, did you hear that?.. It came from the direction of the laboratory... \s[6]I think Alchemist Cookie may have messed up on an experiment! \n\n[half] \s[9]I smell burning... \s[1]I'm sure everyone is okay, \s[0]\w9but\w9... \s[5]it's not a very pleasant smell, is it?.. Haha!"
+	
+	"\s[6]Er... let's go somewhere else, %(username)... it seems like Vampire Cookie drank too much Berry Juice here and passed out on the ground.\n\n[half] \s[5]Yes, yes, don't worry, he's alright! \s[1]He is what one may call a 'lightweight...' \s[0]so you musn't worry yourself over how much he has had. \s[5]I doubt it's even anywhere over one cup!"
+	
+	"\0\s[2]Oh! \s[1]What a lovely scent. \s[5]It seems we've stumbled across my good friend Herb Cookie's flower garden!\n\n[half] \s[1]Hmm... the soil in this flowerpot feels quite damp. \s[0]He must have just watered his plants.\n\n[half] \s[4]...Oh? This one is dry... maybe he forgot to water it? \n\n[half] \s[1]Wait, nevermind! I believe this plant is a type of succulent. \s[0]Maybe he has a different watering schedule for every kind of plant, depending on its needs? \s[5]What a caring and attentive %(person)!"
+	
+	{
+		"\0\s[2]W-woah..! \s[9]Whoops--! \s[3]Ah, goodness... \s[4]I must have stumbled over a hole in the ground...\n\n[half] "
+		--
+		"\s[7]...Who is responsible for all of these holes?.."
+		"\s[4] Who is digging holes on the Castle grounds without any warning?.."
+		"\s[9]Ouch... that hurt! \s[7]Who's digging holes in the middle of the Kingdom without taking any safety precautions?!.."
+		--
+		"\n\n[half] \w9"
+		--
+		"\s[6]I wonder if it's Carrot Cookie, trying to start a new garden... \s[1]if so, I really can't be upset. She is simply following her passion!\n \s[6]...Though, it \f[italic,1]would\f[italic,default] be kind of her to put up a fence first, so that other %(people) don't accidentally fall into any holes..."
+		
+		"\s[7]...I must say, if Beet Cookie is trying to 'hunt monsters' in the middle of the Kingdom again, I will be having a talk with her..! \s[9]%(Capitalize(people)) could get seriously hurt by this! \n\n[half] \s[4]...I think I twisted my ankle..."
+		
+		"\s[4]I doubt that it's Herb Cookie... he's always very good about putting up warnings when he's planting something big. \s[6]Maybe he forgot this time?.. \n\n[half] \s[0]...I'll ask him about it later. He might be able to help patch it up, even if he wasn't the one who dug the hole... \s[1]he's helpful like that!"
+	}
+	
+	
+	{
+		"\0\s[1]I am happy to see that you are establishing yourself well in the Kingdom, %(username)! \s[0]There are so many good %(people) here to befriend.\n\n[half] \s[1]"
+		--
+		"Have you met my good friend, Gingerbrave? \s[5]He and I have shared many adventures together! \s[0]His courage always helps me to keep going, even when the road ahead seems frightening..."
+		
+		{
+			"I'm sure you've met my dear friend Hollyberry... \s[0]she has always been such a kind soul.\n \s[1]"
+			--
+			"Her bravery and passion is something that I have always looked up to."
+			
+			"She is someone who is willing to risk it all to protect her friends... \s[5]that is something that she and I share."
+		}
+		
+		{ // can you tell who my favourite is
+			"Herb Cookie has been a friend of mine for quite a while, now. He was actually one of the first %(people) I met when I moved to the Cookie Kingdom... he has a very welcoming presence! \n\n[half] "
+			--
+			"...He also has a very gentle soul, and a soothing voice, both of which are things that I can really appreciate! If you ever have an upcoming tea party in need of a calming guest, I humbly recommend that you invite him."
+			
+			"I may not be as good of a gardener as he is, but I appreciate the fact that he trusts me enough to help him with his flower garden, sometimes."
+			
+			"He keeps his garden clean and beautiful, easy for me to navigate even on days where my eyes are failing me... \n\n[half] ...Even when there are plant trimmings scattered about, it is always a nice place to sit when he invites me over for tea. My favourite spot is at the table in the middle of the Milkcrowns... those flowers' scent reminds me of someone who I wish to befriend, one day."
+		}
+		
+		{
+			"Black Raisin Cookie is a friend who is very near and dear to my heart. "
+			--
+			"\s[0]When our friends were struggling through a time of hardship, she was the one who always provided for us. She's a very brave young woman, and strong to boot... \n\n[half] \s[1]She may be a bit hard to get to know at first, \s[5]but don't let her tough exterior fool you! \s[1]She is perfectly capable of being silly once you get to know her. \n\n[half] \s[2]O-oh, \w9\w9\s[5]don't tell her I called her 'silly!' She's shy, so she doesn't like when new %(people) don't fall for her 'tough girl' persona..."
+			
+			"She's a little reserved, \s[0]but you can see by the way that she takes care of her friends and family that she's got a beautiful heart... \n\n[half] If you ever need to get her talking, \s[5]just mention her pet crows. \s[0]She could talk for hours about how best to bathe, feed and house a Raisin Crow..."
+		}
+		
+		// i wanna add more of these,,, TOUPDATE
+	}
 }

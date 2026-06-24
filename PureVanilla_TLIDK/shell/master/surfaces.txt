@@ -6,7 +6,6 @@
 //4: Also consider taking a look at Ukadoc's list of recommended surfaces! https://ukagakadreamteam.github.io/ukadoc/manual/descript_shell_surfaces.html#caption_standarddef This can give you an idea of how to start, but also, some external SHIORI events use these surfaces by default! If your ghost has them, it will react as intended! It's not required, but it's something you can consider.
 //5: If you'd like a bit more structure to start with, I have a shell template you can use! https://ukagaka.zichqec.com/template/simplicity_shell
 
-
 descript
 {
 	version,1
@@ -16,17 +15,17 @@ descript
 //—————————————————————————————— Sakura surfaces ——————————————————————————————
 
 surface0
+// idle
 {
 	collision0,195,180,332,268,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	animation0.interval,random,4
 	animation0.pattern0,overlay,101,0,0,0
 	animation0.pattern1,overlay,101,100,0,0
 	animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -48,17 +47,17 @@ surface0
 	animation4.pattern3,overlay,-1,200,0,0
 }
 surface1
+// eyes closed, happy 
 {
 	collision0,180,175,338,260,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	// animation0.interval,random,4
 	// animation0.pattern0,overlay,101,0,0,0
 	// animation0.pattern1,overlay,101,100,0,0
 	// animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -80,17 +79,17 @@ surface1
 	animation4.pattern3,overlay,-1,200,0,0
 }
 surface2
+// surprise
 {
 	collision0,200,180,322,263,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	// animation0.interval,random,4
 	// animation0.pattern0,overlay,201,0,0,0
 	// animation0.pattern1,overlay,201,100,0,0
 	// animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -112,17 +111,17 @@ surface2
 	animation4.pattern2,overlay,-1,200,0,0
 }
 surface3
+// upset
 {
 	collision0,200,190,321,276,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	animation0.interval,random,4
 	animation0.pattern0,overlay,301,0,0,0
 	animation0.pattern1,overlay,301,300,0,0
 	animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -144,17 +143,17 @@ surface3
 	animation4.pattern2,overlay,-1,200,0,0
 }
 surface4
+// mildly upset
 {
 	collision0,200,190,321,276,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	animation0.interval,random,4
 	animation0.pattern0,overlay,401,0,0,0
 	animation0.pattern1,overlay,401,100,0,0
 	animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -176,17 +175,17 @@ surface4
 	animation4.pattern2,overlay,-1,200,0,0
 }
 surface5
+// smile
 {
 	collision0,180,175,338,260,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	// animation0.interval,random,4
 	// animation0.pattern0,overlay,501,0,0,0
 	// animation0.pattern1,overlay,501,100,0,0
 	// animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -208,17 +207,17 @@ surface5
 	animation4.pattern3,overlay,-1,200,0,0
 }
 surface6
+// mild sadness
 {
 	collision0,190,190,330,260,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	// animation0.interval,random,4
 	// animation0.pattern0,overlay,601,0,0,0
 	// animation0.pattern1,overlay,601,100,0,0
 	// animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -240,17 +239,17 @@ surface6
 	animation4.pattern3,overlay,-1,200,0,0
 }
 surface7
+// slight anger
 {
 	collision0,190,190,330,260,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	animation0.interval,random,4
 	animation0.pattern0,overlay,701,0,0,0
 	animation0.pattern1,overlay,701,100,0,0
 	animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -275,7 +274,7 @@ surface7
 // {
 // 	collision0,0,0,130,65,head
 	
-// 	//Example code for blink animation - uncomment if you want it
+// 	
 // 	animation0.interval,random,4
 // 	animation0.pattern0,overlay,101,0,0,0
 // 	animation0.pattern1,overlay,101,100,0,0
@@ -301,17 +300,17 @@ surface7
 // 	animation4.pattern2,overlay,-1,200,0,0
 //  }
 surface9
+// surprised + anxious, lil sweat drop
 {
 	collision0,200,180,322,263,head
 	
-	//Example code for blink animation - uncomment if you want it
+	
 	// animation0.interval,random,4
 	// animation0.pattern0,overlay,101,0,0,0
 	// animation0.pattern1,overlay,101,100,0,0
 	// animation0.pattern2,overlay,-1,50,0,0
 	
 	
-	//Example code for a talk animation - uncomment if you want it
 	animation1.interval,talk,4
 	animation1.pattern0,alternativestart,(2,3,4)
 	
@@ -331,11 +330,4 @@ surface9
 	//animation4.pattern1,overlay,905,200,0,0
 	animation4.pattern1,overlay,-1,200,0,0
 	animation4.pattern2,overlay,-1,200,0,0
-}
-
-//—————————————————————————————— Kero surfaces ——————————————————————————————
-
-surface10
-{
-	collision0,0,0,130,65,head
 }

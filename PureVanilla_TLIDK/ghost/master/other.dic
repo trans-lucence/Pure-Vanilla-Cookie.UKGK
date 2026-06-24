@@ -18,13 +18,14 @@ OnTranslateInternal.AutoPause
 	if "\![no-autopause]" !_in_ _talk
 	{
 				
-		_talk = REPLACE(_talk,"\n ","\n\w9") // linebreak
+		_talk = REPLACE(_talk,"\n ","\n\w9\w1") // linebreak
+		_talk = REPLACE(_talk,"\n[half] ","\n[half]\w9\w1") // linebreak and a half
 		_talk = REPLACE(_talk,". ",".\w8 ") // .
 		_talk = REPLACE(_talk,", ",",\w2 ") // ,
-		_talk = REPLACE(_talk,"? ","?\w_[10] ") // ?
-		_talk = REPLACE(_talk,"! ","!\w_[10] ") // !
+		_talk = REPLACE(_talk,"? ","?\w8\w8 ") // ?
+		_talk = REPLACE(_talk,"! ","!\w8\w8 ") // !
 		_talk = REPLACE(_talk,"; ",";\w6 ") // ;
-		_talk = REPLACE(_talk,"-- ","--\w8 ") // --
+		_talk = REPLACE(_talk," -- "," --\w8 ") // --
 	}
 	
 	_talk
@@ -67,7 +68,7 @@ OnKeyPress
 	if reference0 == "f1"; "\![open,readme]"
 	elseif reference0 == "t"; OnAiTalk
 	elseif reference0 == "r"; OnLastTalk
-	elseif reference0 == "0"; OnTest // DEVREMOVE
+	//elseif reference0 == "0"; OnTest
 }
 
 OnSurfaceRestore
@@ -76,7 +77,7 @@ OnSurfaceRestore
 OnWindowStateRestore { OnSurfaceRestore }
 
 // raw github content link of root file
-On_homeurl; { "https://raw.githubusercontent.com/trans-lucence/Pure-Vanilla-Cookie.UKGK/refs/heads/main/PureVanilla_TLIDK/" } // hopefully this works!!! it won't while the repo is private obviously. but i'll unprivate the repo later in the Jam for testing methinks
+On_homeurl; { "https://raw.githubusercontent.com/trans-lucence/Pure-Vanilla-Cookie.UKGK/refs/heads/main/PureVanilla_TLIDK/" }
 
 FormatLinks : all
 {
@@ -92,6 +93,7 @@ FormatLinks : all
 
 recommendsites_sakura : array
 {
+	"pure vanilla cookie ukagaka"; "https://github.com/trans-lucence/Pure-Vanilla-Cookie.UKGK"
 	"keelix's site";	"https://trans-lucence.nekoweb.org/"
 	"idk's github";	"https://github.com/singlefl4me/singlefl4me"
 }
@@ -100,8 +102,7 @@ recommendsites_sakura : array
 
 portalsites_sakura : array
 {
-	"label";	"link"
-	"label2";	"link2"
+	"pure vanilla cookie's wiki page";		"https://cookierun.wiki/w/Pure_Vanilla_Cookie"
 }
 
 /* // probably won't be used

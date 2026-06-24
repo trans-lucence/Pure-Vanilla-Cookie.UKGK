@@ -1,9 +1,8 @@
 OnMenu : all
 {
-	"\0\s[0]\![set,autoscroll,disable]"
+	"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
 		if SHIORI3FW.Eventid == "OnMouseDoubleClick"; { MenuGreetings + "\n\n[half]" }
 	
-	"\![quicksection,true]"
 	
 	"\![*]\q[Talk to me!,OnAiTalk]\n" // aitalk.dic
 		switch LastTalk == ""
@@ -21,7 +20,18 @@ OnMenu : all
 
 	MenuGreetings : nonoverlap_pool
 	{
-		"" // TODO
+		"\0\s[1]"
+		--
+		"Hmm?"
+		"Yes?"
+		{
+			"What do you need, "
+			"Is there something I could help you with, "
+			--
+			"my friend?"
+			"friend?"
+			"%(username)?"
+		}
 	}
 
 OnTest; { "" }

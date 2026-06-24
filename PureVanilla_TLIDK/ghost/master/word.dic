@@ -22,3 +22,90 @@ flavour
 	"gingerbread"
 	"maple"
 }
+
+friend
+{
+	"Hollyberry"
+	"Dark Cacao"
+	"Golden Cheese"
+	// we're simply not going to address the elephant in the room
+	"Gingerbrave"
+	{
+		"Herb"
+		"Wizard"
+		"Strawberry"
+		"Peach Blossom"
+		"Black Raisin"
+		--
+		" Cookie"
+	}
+}
+
+cardinaldirection
+{
+	"north"
+	"south"
+	"east"
+	"west"
+	"northeast"
+	"northwest"
+	"southeast"
+	"southwest"
+}
+
+	place.food
+	{
+		"cafe"
+		"restaurant"
+		"diner"
+		"tavern"
+	}
+	
+food.anySolid
+{
+	"%(food.sweet)"
+	"%(food.savory)"
+}
+	food.anyTrue
+	{
+		_rand = RAND(3)
+		
+		if _rand > 0; { "%(food.anySolid)" }
+		else; { "food.drink" }
+	}
+	
+	food.sweet
+	{
+		"fluffy castella"
+		{
+			"jelly"
+			"sweet jelly"
+			"bear jelly"
+			"%(flavour)"
+			--
+			" %(food.sweet.type)"
+		}
+	}
+		food.sweet.type
+		{
+			"pie"
+			"cake"
+			"muffin"
+			"cupcake"
+			"tart"
+		}
+	
+	food.savory
+	{
+		"honeyed cheesewheel"
+		"Jellybean roast"
+		"fluffy omurice"
+		"golden croissant"
+	}
+	
+	food.drink
+	{
+		"creamy root beer"
+		"jellybean latte"
+		"espresso"
+	}

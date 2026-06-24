@@ -7,10 +7,10 @@ OnFirstBoot : all
 		LastTalk = ""
 		stroke = 0
 		aitalkinterval = 300		
-	// NE
-	"\1\s[-1]\0\s[0]Why, hello there, little cookie! It's nice to meet you...\n\n[half]\w8Ah, you've just moved here? How absolutely lovely! It would be my honor to show you around the Cookie Kingdom!\n\n"
 	
-	"\![*]\__q[OnUserRename]Please, tell me your name, little one!\__q"
+	"\1\s[-1]\0\s[0]Hm... \s[2]Someone new..?\n\n[half] \s[5]Why, hello there, little cookie! It's very nice to meet you...\n\n[half] \w9\s[2]Ah, you've just moved here? \s[1]How absolutely lovely! \w7\s[5]It would be my honor to show you around the Cookie Kingdom!\n\n"
+	
+	"\![*]\__q[OnUserRename]Please, tell me your name, little one!\__q" // metamenu.dic
 }
 
 OnInitialize
@@ -21,7 +21,7 @@ OnInitialize
 	}
 }
 
-OnBoot // TODO
+OnBoot : nonoverlap // TODO
 {
 	// _temp = SHIORI3FW.UserBirthday
 	// _user_birthday = "%(_temp[1])/%(_temp[2])" // Month/Day
@@ -42,13 +42,20 @@ OnBoot // TODO
 	
 	// else
 	// {
-		""
+		"\0\s[1]Why, hello there, %(username)!"
+		"\0\s[2]Oh, %(username)! \s[4]I didn't hear you coming, \s[6]so you startled me a little... \s[1]but, it's so nice of you to come see me!"
+		--
+		"\n\n[half] \s[0]"
+		--
+		"How are you feeling today? Would you like to take a stroll around the Kingdom with me?"
+		"Would you like to join me on a stroll around the Kingdom?"
+		"If you'd like, I could keep you company today; \s[5]I'd love to learn more about you, my friend!"
 	// }
 }
 
 OnClose // TODO
 {
-	""
+	"\0\s[2]Ah! \s[6]Is it time for you to leave, %(username)?\n\n[half] \s[0]Well, \s[5]thank you for staying to chat with me! \s[1]I hope the rest of your day is lovely, my friend."
 	--
 	"\w8\w8\-"
 }

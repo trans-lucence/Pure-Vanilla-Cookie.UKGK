@@ -7,16 +7,15 @@ OnMetaMenu : all
 	_callcookie = "On"
 		if callUserCookie == 0; { _callcookie = "Off" }
 	
-	"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
+	"\0\s[0]\b[2]\![set,autoscroll,disable]\![quicksection,true]"
 	"\f[height,+2]Settings\f[height,default]\n\n[half]"
 	
 	"\![*]\q[Change your name,OnUserRename]\n"
-	"\![*]Append 'Cookie' to the end of your name: %(_callcookie) \f[sup,1](\q[Toggle,OnswitchCallCookie])\n"
+	"\![*]Append 'Cookie' to the end of your name: %(_callcookie) \f[sup,1](\q[Toggle,OnswitchCallCookie])\f[sup,default]\n"
 	"\n"
 	
-	
-	"\![*]Say 'Cookie': %(_cookie) \f[sup,1](\q[Toggle,OnswitchCookie])\n"
-	// "\![*]Say 'Strawberry Jam': %(_jam) \f[sup,1](\q[Toggle,OnswitchCookie])\n" // i'll re-add this switch whenever i actually put in dialogue that needs it. for now, it would be kinda ,,, weird ?
+	"\![*]Say 'Cookie': %(_cookie) \f[sup,1](\q[Toggle,OnswitchCookie])\f[sup,default]\n\f[size,-2]Note that this doesn't change what the canon characters are called! 'Beet Cookie' will still be 'Beet Cookie,' for example.\n"
+	// "\![*]Say 'Strawberry Jam': %(_jam) \f[sup,1](\q[Toggle,OnswitchCookie])\f[sup,default]\n" // i'll re-add this switch whenever i actually put in dialogue that needs it. for now, it would be kinda ,,, weird ?
 	"\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
@@ -26,30 +25,31 @@ OnMetaMenu : all
 	
 }
 	
-	OnUserRename : all // NE
+	OnUserRename : all
 	{
-		"\0\s[0]"
+		"\0\s[5]\b[2]\![set,autoscroll,disable]\![quicksection,true]"
 		--
-		"Please tell me your name, little one!"
+		"\f[italic,1]Please tell me your name, little one!\f[italic,default]"
 		
-		"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]\n\n[half]"
+		"\0\n\n[half]"
 		"\f[color,disable]In the text field, you may insert your player Cookie's name. This can be a flavor, type of food, or even just your name -- anything you'd like. By default, the name that you choose will be proceeded by 'Cookie' -- this can be changed in the Settings menu. You can change your name at any time from that same Settings menu.\f[color,default]"
 		--
 		"\n\n \![*]\q[Change name,OnUserRename.yes]"
 		if username.input != ""; { "\n\![*]\q[Not right now,OnUserRename.no]" }
 	}
 		OnUserRename.yes; { "\![open,inputbox,OnUserName.print]" }
-			OnUserRename.no; { "" } // TODO
+			OnUserRename.no; { "\s[1]Oh, alright! So, %(username) is stilla good name for you, then? \n\n[half]\s[5]Good, good!" }
 		
-		OnUserName.print
+		OnUserName.print // TOUPDATE ; i wanna add a check system where it checks if you're using the name of a cookie he already talks about, but that's for later
 		{
 			username.input = reference0
-			"\0\s[0]My, what a lovely name. Thank you for telling me, %(username)!"
+			"\0\s[5]My, what a lovely name. \s[1]Thank you for telling me, %(username)!"
 		}
 	
 	username
 	{
-		if callUserCookie == 1;	{ username.input + " Cookie" }
+		if username.input == ""; { "friend" }
+		elseif callUserCookie == 1;	{ username.input + " Cookie" }
 		else; { username.input }
 	}
 		
