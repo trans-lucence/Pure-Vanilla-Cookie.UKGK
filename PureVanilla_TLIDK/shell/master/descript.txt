@@ -2,9 +2,9 @@ charset,UTF-8
 type,shell
 
 name,Default Shell
-craftman,
-craftmanw,
-craftmanurl,
+craftman,idk
+craftmanw,idkimtired
+craftmanurl,https://github.com/singlefl4me
 
 seriko.alignmenttodesktop,free
 seriko.use_self_alpha,1
