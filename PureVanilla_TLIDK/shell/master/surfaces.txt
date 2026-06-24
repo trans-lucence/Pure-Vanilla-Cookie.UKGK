@@ -10,38 +10,327 @@
 descript
 {
 	version,1
+	//animation-sort,ascend
 }
 
 //—————————————————————————————— Sakura surfaces ——————————————————————————————
 
 surface0
 {
-	collision0,0,0,130,65,head
+	collision0,195,180,332,268,head
 	
 	//Example code for blink animation - uncomment if you want it
-	//animation0.interval,random,4
-	//animation0.pattern0,overlay,101,0,0,0
-	//animation0.pattern1,overlay,102,100,0,0
-	//animation0.pattern2,overlay,-1,50,0,0
+	animation0.interval,random,4
+	animation0.pattern0,overlay,101,0,0,0
+	animation0.pattern1,overlay,101,100,0,0
+	animation0.pattern2,overlay,-1,50,0,0
 	
 	
 	//Example code for a talk animation - uncomment if you want it
-	// animation1.interval,talk,4
-	// animation1.pattern0,alternativestart,(2,3,4)
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
 	
-	// animation2.interval,never
-	// animation2.pattern0,overlay,103,0,0,0
-	// animation2.pattern1,overlay,104,200,0,0
-	// animation2.pattern2,overlay,-1,200,0,0
+	animation2.interval,never
+	animation2.pattern0,overlay,103,0,0,0
+	animation2.pattern1,overlay,104,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
 	
-	// animation3.interval,never
-	// animation3.pattern0,overlay,103,0,0,0
-	// animation3.pattern1,overlay,-1,200,0,0
+	animation3.interval,never
+	animation3.pattern0,overlay,103,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
 	
-	// animation4.interval,never
-	// animation4.pattern0,overlay,104,0,0,0
-	// animation4.pattern1,overlay,105,200,0,0
-	// animation4.pattern2,overlay,-1,200,0,0
+	animation4.interval,never
+	animation4.pattern0,overlay,104,0,0,0
+	animation4.pattern1,overlay,105,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+	animation4.pattern3,overlay,-1,200,0,0
+}
+surface1
+{
+	collision0,180,175,338,260,head
+	
+	//Example code for blink animation - uncomment if you want it
+	// animation0.interval,random,4
+	// animation0.pattern0,overlay,101,0,0,0
+	// animation0.pattern1,overlay,101,100,0,0
+	// animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,53,0,0,0
+	animation2.pattern1,overlay,54,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,53,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,54,0,0,0
+	animation4.pattern1,overlay,55,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+	animation4.pattern3,overlay,-1,200,0,0
+}
+surface2
+{
+	collision0,200,180,322,263,head
+	
+	//Example code for blink animation - uncomment if you want it
+	// animation0.interval,random,4
+	// animation0.pattern0,overlay,201,0,0,0
+	// animation0.pattern1,overlay,201,100,0,0
+	// animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,203,0,0,0
+	animation2.pattern1,overlay,204,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,203,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,204,0,0,0
+	//animation4.pattern1,overlay,205,200,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+}
+surface3
+{
+	collision0,200,190,321,276,head
+	
+	//Example code for blink animation - uncomment if you want it
+	animation0.interval,random,4
+	animation0.pattern0,overlay,301,0,0,0
+	animation0.pattern1,overlay,301,300,0,0
+	animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,303,0,0,0
+	animation2.pattern1,overlay,304,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,303,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,304,0,0,0
+	//animation4.pattern1,overlay,305,200,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+}
+surface4
+{
+	collision0,200,190,321,276,head
+	
+	//Example code for blink animation - uncomment if you want it
+	animation0.interval,random,4
+	animation0.pattern0,overlay,401,0,0,0
+	animation0.pattern1,overlay,401,100,0,0
+	animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,403,0,0,0
+	animation2.pattern1,overlay,404,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,403,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,404,0,0,0
+	//animation4.pattern1,overlay,405,200,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+}
+surface5
+{
+	collision0,180,175,338,260,head
+	
+	//Example code for blink animation - uncomment if you want it
+	// animation0.interval,random,4
+	// animation0.pattern0,overlay,501,0,0,0
+	// animation0.pattern1,overlay,501,100,0,0
+	// animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,503,0,0,0
+	animation2.pattern1,overlay,504,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,503,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,504,0,0,0
+	animation4.pattern1,overlay,505,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+	animation4.pattern3,overlay,-1,200,0,0
+}
+surface6
+{
+	collision0,190,190,330,260,head
+	
+	//Example code for blink animation - uncomment if you want it
+	// animation0.interval,random,4
+	// animation0.pattern0,overlay,601,0,0,0
+	// animation0.pattern1,overlay,601,100,0,0
+	// animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,603,0,0,0
+	animation2.pattern1,overlay,604,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,603,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,604,0,0,0
+	animation4.pattern1,overlay,605,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+	animation4.pattern3,overlay,-1,200,0,0
+}
+surface7
+{
+	collision0,190,190,330,260,head
+	
+	//Example code for blink animation - uncomment if you want it
+	animation0.interval,random,4
+	animation0.pattern0,overlay,701,0,0,0
+	animation0.pattern1,overlay,701,100,0,0
+	animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,703,0,0,0
+	animation2.pattern1,overlay,704,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,703,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,704,0,0,0
+	//animation4.pattern1,overlay,705,200,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
+}
+// surface8
+// {
+// 	collision0,0,0,130,65,head
+	
+// 	//Example code for blink animation - uncomment if you want it
+// 	animation0.interval,random,4
+// 	animation0.pattern0,overlay,101,0,0,0
+// 	animation0.pattern1,overlay,101,100,0,0
+// 	animation0.pattern2,overlay,-1,50,0,0
+	
+	
+// 	//Example code for a talk animation - uncomment if you want it
+// 	animation1.interval,talk,4
+// 	animation1.pattern0,alternativestart,(2,3,4)
+	
+// 	animation2.interval,never
+// 	animation2.pattern0,overlay,103,0,0,0
+// 	animation2.pattern1,overlay,104,200,0,0
+// 	animation2.pattern2,overlay,-1,200,0,0
+	
+// 	animation3.interval,never
+// 	animation3.pattern0,overlay,103,0,0,0
+// 	animation3.pattern1,overlay,-1,200,0,0
+	
+// 	animation4.interval,never
+// 	animation4.pattern0,overlay,104,0,0,0
+// 	animation4.pattern1,overlay,105,200,0,0
+// 	animation4.pattern2,overlay,-1,200,0,0
+//  }
+surface9
+{
+	collision0,200,180,322,263,head
+	
+	//Example code for blink animation - uncomment if you want it
+	// animation0.interval,random,4
+	// animation0.pattern0,overlay,101,0,0,0
+	// animation0.pattern1,overlay,101,100,0,0
+	// animation0.pattern2,overlay,-1,50,0,0
+	
+	
+	//Example code for a talk animation - uncomment if you want it
+	animation1.interval,talk,4
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,903,0,0,0
+	animation2.pattern1,overlay,904,200,0,0
+	animation2.pattern2,overlay,-1,200,0,0
+	animation2.pattern3,overlay,-1,200,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,903,0,0,0
+	animation3.pattern1,overlay,-1,200,0,0
+	animation3.pattern2,overlay,-1,200,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,904,0,0,0
+	//animation4.pattern1,overlay,905,200,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	animation4.pattern2,overlay,-1,200,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————
