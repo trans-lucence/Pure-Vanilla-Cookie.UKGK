@@ -12,7 +12,7 @@ file,ghost/master/menu.dica0ac03f50e481b01222f6b6e1a6f4684size=750date=2026-0
 file,ghost/master/meta.dicffe1c90abd981da1744c9d175e5b2de2size=5953date=2025-02-15T05:23:16
 file,ghost/master/metamenu.dic0da5762e20f940a258aa824f03d30646size=3961date=2026-06-25T06:16:56
 file,ghost/master/mouse.dic04976b16bb847de0bee33843c80c9ab1size=599date=2026-06-24T13:05:47
-file,ghost/master/other.dic4b0b568c66a40bf520a1df6f8a89b8c4size=3428date=2026-06-25T06:31:41
+file,ghost/master/other.dic2ae1b2ef5d24c0805bf29fab3d5437e8size=3439date=2026-06-25T06:35:30
 file,ghost/master/word.dic46e90f30838fb75b778cb50ae9460303size=1337date=2026-06-24T15:00:55
 file,ghost/master/yaya.dll7ca71c0691df0379655530fcf6d0fa7csize=884736date=2025-01-15T16:08:02
 file,ghost/master/yaya.txtdad8bdf51fe6fc86e8ea5e99aca8c9cesize=719date=2026-06-18T12:48:21
