@@ -1,6 +1,6 @@
 OnMenu : all
 {
-	"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
+	"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]\![no-autopause]"
 		if SHIORI3FW.Eventid == "OnMouseDoubleClick"; { MenuGreetings + "\n\n[half]" }
 	
 	

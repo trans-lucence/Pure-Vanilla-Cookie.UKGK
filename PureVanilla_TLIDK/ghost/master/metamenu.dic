@@ -7,7 +7,7 @@ OnMetaMenu : all
 	_callcookie = "On"
 		if callUserCookie == 0; { _callcookie = "Off" }
 	
-	"\0\s[0]\b[2]\![set,autoscroll,disable]\![quicksection,true]"
+	"\0\s[0]\b[2]\![set,autoscroll,disable]\![quicksection,true]\![no-autopause]"
 	"\f[height,+2]Settings\f[height,default]\n\n[half]"
 	
 	"\![*]\q[Change your name,OnUserRename]\n"
@@ -27,7 +27,7 @@ OnMetaMenu : all
 	
 	OnUserRename : all
 	{
-		"\0\s[5]\b[2]\![set,autoscroll,disable]\![quicksection,true]"
+		"\0\s[5]\b[2]\![set,autoscroll,disable]\![quicksection,true]\![no-autopause]"
 		--
 		"\f[italic,1]Please tell me your name, little one!\f[italic,default]"
 		
@@ -76,7 +76,7 @@ OnMetaMenu : all
 
 	OnHotkeyList : all // other.dic
 	{
-		"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]"
+		"\0\s[0]\![set,autoscroll,disable]\![quicksection,true]\![no-autopause]"
 		
 		"\![*]F1 -- Opens the README document\n\n"
 		"\![*]T -- Prompts Pure Vanilla to speak\n\n"
@@ -93,7 +93,7 @@ OnMetaMenu : all
 		elseif aitalkinterval == 3600; _talkrate = "1 hour"
 		
 		
-		"\0\s[0]\b2\![set,autoscroll,disable]\![quicksection,true]"
+		"\0\s[0]\b2\![set,autoscroll,disable]\![quicksection,true]\![no-autopause]"
 		"Current talk rate: %(_talkrate)\n\n"
 		
 		"\![*]\q[Off,OnTalkRateChange,0]\n"

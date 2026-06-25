@@ -8,7 +8,7 @@ OnFirstBoot : all
 		stroke = 0
 		aitalkinterval = 300		
 	
-	"\1\s[-1]\0\s[0]Hm... \s[2]Someone new..?\n\n[half] \s[5]Why, hello there, little cookie! It's very nice to meet you...\n\n[half] \w9\s[2]Ah, you've just moved here? \s[1]How absolutely lovely! \w7\s[5]It would be my honor to show you around the Cookie Kingdom!\n\n"
+	"\1\s[-1]\0\s[0]Hm... \s[2]Someone new..?\n\n[half] \w8\s[5]Why, hello there, little cookie! It's very nice to meet you...\n\n[half] \w9\w4\s[2]Ah, you've just moved here? \s[1]How absolutely lovely! \w7\s[5]It would be my honor to show you around the Cookie Kingdom!\n\n"
 	
 	"\![*]\__q[OnUserRename]Please, tell me your name, little one!\__q" // metamenu.dic
 }
