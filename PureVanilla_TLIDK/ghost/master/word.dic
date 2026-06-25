@@ -1,4 +1,4 @@
-a.person
+person
 {
 	if sayCookie == 1; { "cookie" }
 	else; { "person" }
