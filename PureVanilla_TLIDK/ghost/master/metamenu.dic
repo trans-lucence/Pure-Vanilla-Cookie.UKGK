@@ -38,7 +38,7 @@ OnMetaMenu : all
 		if username.input != ""; { "\n\![*]\q[Not right now,OnUserRename.no]" }
 	}
 		OnUserRename.yes; { "\![open,inputbox,OnUserName.print]" }
-			OnUserRename.no; { "\s[1]Oh, alright! So, %(username) is stilla good name for you, then? \n\n[half]\s[5]Good, good!" }
+			OnUserRename.no; { "\s[1]Oh, alright! So, %(username) is still a good name for you, then? \n\n[half]\s[5]Good, good!" }
 		
 		OnUserName.print // TOUPDATE ; i wanna add a check system where it checks if you're using the name of a cookie he already talks about, but that's for later
 		{

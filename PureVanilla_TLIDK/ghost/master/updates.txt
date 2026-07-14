@@ -3,14 +3,14 @@ file,install.txt40cc621c899f5eb6a91dc81832ea2eadsize=82date=2026-06-18T12:02:
 file,readme.txt9b0c6823c9f0a3467e66cb599e24f354size=1099date=2026-06-18T13:49:05
 file,thumbnail.pngb7bd9ae789de4dfbec1be9b08617ff9fsize=59688date=2026-06-25T06:00:43
 file,thumbnail1.pngd3b539efd81e95aea7a797df1c1803d6size=31892date=2026-06-25T06:00:43
-file,ghost/master/aitalk.dic4f3da2cdf27962fca0d39c8a80c3cbaesize=6840date=2026-06-24T15:39:26
+file,ghost/master/aitalk.dica706e7f05ef690f51588a4c233f78f1fsize=6804date=2026-07-14T12:14:36
 file,ghost/master/boot.dic960bd878307ba3b7a1f701376a62555asize=1633date=2026-06-25T06:17:48
 file,ghost/master/descript.txt677b33bb571b2f5799d100fac8190468size=351date=2026-06-24T14:12:40
 file,ghost/master/emerg.dicc7cb6eacd3262003fef909c382a6fefesize=351date=2023-04-14T15:45:50
 file,ghost/master/icon.ico6323463dec41eb7423b50e43d9e418c4size=318date=2026-06-18T13:47:02
 file,ghost/master/menu.dica0ac03f50e481b01222f6b6e1a6f4684size=750date=2026-06-25T06:17:01
 file,ghost/master/meta.dicffe1c90abd981da1744c9d175e5b2de2size=5953date=2025-02-15T05:23:16
-file,ghost/master/metamenu.dic0da5762e20f940a258aa824f03d30646size=3961date=2026-06-25T06:16:56
+file,ghost/master/metamenu.dic6706f16f91f0b9c0b3252738b6cf990dsize=3962date=2026-07-14T12:03:52
 file,ghost/master/mouse.dic04976b16bb847de0bee33843c80c9ab1size=599date=2026-06-24T13:05:47
 file,ghost/master/other.dic2ae1b2ef5d24c0805bf29fab3d5437e8size=3439date=2026-06-25T06:35:30
 file,ghost/master/word.dic3b250d837c2d083710136f4221cb72d8size=1335date=2026-06-25T07:24:32

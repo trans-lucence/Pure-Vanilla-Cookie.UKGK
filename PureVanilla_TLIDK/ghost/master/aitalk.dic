@@ -12,12 +12,15 @@ OnAiTalk
 	LastTalk
 }
 
-NormalTalk : nonoverlap_pool // renamed because i'm planning to add a 'raretalk' pool post-jam
+NormalTalk : nonoverlap_pool
 {
 	"\0\s[1]I may not be as quick or spry as I once was, \s[5]but I still enjoy taking long walks around the Kingdom!.. \n\n[half] \s[0]...It helps that the Sugar Gnomes have installed tactile paving along most of the walkways. \s[5]Those little fellows are so kind and considerate!"
 	
-	"\0\s[0]%(username)... \s[1]do you smell those flowers?\n\n[half] \w9\s[5]Yes, I do, too! \w9\s[0]It seems we've wandered into one of the flower gardens near the Castle. \w3I smell\s[1]\w9\w5... \n\f[size,-2]\s[6]hm... \w9is that\w2.\w2.\w8?\f[size,default]\n \w9\s[5]Oh, how lovely! \s[0]There must be Vanilla Orchids here!\n\n[half] \s[1]These have always been my favourite flower. \w9Their smell... \w7\s[5]it brings me right back home."
-	
+	{
+		"\0\s[0]%(Capitalize(username))... \s[1]do you smell those flowers?\n\n[half] \w9\s[5]Yes, I do, too! \w9\s[0]It seems we've wandered into one of the flower gardens near the Castle. "
+		--
+		"\w3I smell\s[1]\w9\w5... \n\f[size,-2]\s[6]hm... \w9is that\w2.\w2.\w8?\f[size,default]\n \w9\s[5]Oh, how lovely! \s[0]There must be Vanilla Orchids here!\n\n[half] \s[1]These have always been my favourite flower. \w9Their smell... \w7\s[5]it brings me right back home."
+	}
 	"\0\s[0]Hmm... \w9\s[6]I'm beginning to get a little hungry. \s[1]How about you and I grab some Jellies together? \w3\s[0]There is a lovely restaurant just %(cardinaldirection) of here... \w7\s[5]we could share a %(food.anySolid)!"
 	
 	"\0\s[1]How pleasant..! I think I can hear Clover Cookie playing his lute in the distance...\n\n[half] \s[0]Perhaps we should go say hello! \s[1]Maybe he will play us another pretty song. \s[5]He loves when other %(people) sing along, so please don't be shy if you know the lyrics, %(username)!"
